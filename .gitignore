@@ -1,0 +1,108 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+#Visual Studio Files
+[Oo]bj
+[Bb]in
+[Dd]ebug
+[Bb]uild/
+*.user
+*.suo
+*.exe
+*.pdb
+*.aps
+*_i.c
+*_p.c
+*.ncb
+*.tlb
+*.tlh
+*.[Cc]ache
+*.bak
+*.ncb
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+ipch/ 
+*.dbmdl
+*.csproj.user
+*.cache
+*.swp
+*.vspscc
+*.vssscc
+*.bak.*
+*.bak
+*.bin
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Ll]og/
+
+# DNX
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# Visual Studio 2017 auto generated files
+Generated\ Files/
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+# System Files
+.DS_Store
+Thumbs.db
+

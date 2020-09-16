@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentiSmart.API", "DentiSmart.API.csproj", "{049BF047-23B1-44AA-AE41-16EDA62D9D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentiSmart.API", "DentiSmart.API.csproj", "{049BF047-23B1-44AA-AE41-16EDA62D9D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\Models\Models.csproj", "{30FF184B-90BD-42AF-B590-CA022C0E15D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentiSmart.Domain", "..\DentiSmart.Domain\DentiSmart.Domain.csproj", "{25B3A69B-16EE-4404-AFB4-0FE9464B1B1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "..\Repository\Repository.csproj", "{872F62DA-3707-4FD0-95EF-9D3517A97572}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentiSmart.Infrastructure", "..\DentiSmart.Infrastructure\DentiSmart.Infrastructure.csproj", "{4B730872-A183-4B76-8763-3525AF0C3644}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{049BF047-23B1-44AA-AE41-16EDA62D9D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{049BF047-23B1-44AA-AE41-16EDA62D9D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{049BF047-23B1-44AA-AE41-16EDA62D9D1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30FF184B-90BD-42AF-B590-CA022C0E15D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30FF184B-90BD-42AF-B590-CA022C0E15D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30FF184B-90BD-42AF-B590-CA022C0E15D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30FF184B-90BD-42AF-B590-CA022C0E15D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{872F62DA-3707-4FD0-95EF-9D3517A97572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{872F62DA-3707-4FD0-95EF-9D3517A97572}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{872F62DA-3707-4FD0-95EF-9D3517A97572}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{872F62DA-3707-4FD0-95EF-9D3517A97572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B3A69B-16EE-4404-AFB4-0FE9464B1B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B3A69B-16EE-4404-AFB4-0FE9464B1B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B3A69B-16EE-4404-AFB4-0FE9464B1B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B3A69B-16EE-4404-AFB4-0FE9464B1B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B730872-A183-4B76-8763-3525AF0C3644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B730872-A183-4B76-8763-3525AF0C3644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B730872-A183-4B76-8763-3525AF0C3644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B730872-A183-4B76-8763-3525AF0C3644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

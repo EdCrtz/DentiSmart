@@ -1,56 +1,77 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-navigation-drawer v-model="drawer" temporary app>
+      <v-list nav dense>
+        <v-list-item-group active-class="blue--text text--accent-4">
+          <v-list-item
+            v-for="opcion in menu"
+            v-bind:key="opcion.id"
+            :to="opcion.ruta"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ opcion.icono }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>{{ opcion.nombre }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-app-bar
+      color="#3FA7DB"
+      prominent
+      shrink-on-scroll
+      scroll-threshold="500"
+      fade-img-on-scroll
+      dark
+      src="https://www.artoispublicidade.com.br/wp-content/uploads/2020/06/1433.jpg"
+      app
+    >
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+      <v-toolbar-title class="font-weight-bold"
+        >Portal de dentista</v-toolbar-title
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld />
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
     </v-main>
+
+    <v-footer app> </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
 export default {
   name: "App",
 
-  components: {
-    HelloWorld
-  },
+  components: {},
 
   data: () => ({
-    //
+    drawer: false,
+    menu: [
+      {
+        id: 1,
+        nombre: "Inicio",
+        icono: "mdi-tooth",
+        ruta: "/"
+      },
+      {
+        id: 2,
+        nombre: "Catalogo de Productos",
+        icono: "mdi-border-color",
+        ruta: "productos"
+      },
+      {
+        id: 3,
+        nombre: "Mi cuenta",
+        icono: "mdi-account",
+        ruta: "about"
+      }
+    ]
   })
 };
 </script>

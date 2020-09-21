@@ -2,10 +2,11 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" temporary app>
       <v-list nav dense>
+        <v-subheader>Menu</v-subheader>
         <v-list-item-group active-class="blue--text text--accent-4">
           <v-list-item
-            v-for="opcion in menu"
-            v-bind:key="opcion.id"
+            v-for="(opcion, i) in menu"
+            v-bind:key="i"
             :to="opcion.ruta"
           >
             <v-list-item-icon>
@@ -21,7 +22,7 @@
       color="#3FA7DB"
       prominent
       shrink-on-scroll
-      scroll-threshold="500"
+      scroll-threshold="50"
       fade-img-on-scroll
       dark
       src="https://www.artoispublicidade.com.br/wp-content/uploads/2020/06/1433.jpg"
@@ -54,22 +55,24 @@ export default {
     drawer: false,
     menu: [
       {
-        id: 1,
         nombre: "Inicio",
         icono: "mdi-tooth",
         ruta: "/"
       },
       {
-        id: 2,
         nombre: "Catalogo de Productos",
         icono: "mdi-border-color",
         ruta: "productos"
       },
       {
-        id: 3,
         nombre: "Mi cuenta",
         icono: "mdi-account",
         ruta: "about"
+      },
+      {
+        nombre: "Citas",
+        icono: "mdi-clipboard-list-outline",
+        ruta: "citas"
       }
     ]
   })

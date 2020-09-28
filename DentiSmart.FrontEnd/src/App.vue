@@ -25,7 +25,8 @@
       scroll-threshold="50"
       fade-img-on-scroll
       dark
-      src="https://www.artoispublicidade.com.br/wp-content/uploads/2020/06/1433.jpg"
+      v-if="isAuthenticated"
+      src="./assets/fondo.png"
       app
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
@@ -36,12 +37,12 @@
     </v-app-bar>
 
     <v-main>
-      <v-container fluid>
+      <v-container fluid v-bind:class="{ 'pa-0': !isAuthenticated }">
         <router-view></router-view>
       </v-container>
     </v-main>
-
-    <v-footer app> </v-footer>
+    <!-- 
+    <v-footer app> </v-footer> -->
   </v-app>
 </template>
 
@@ -57,7 +58,7 @@ export default {
       {
         nombre: "Inicio",
         icono: "mdi-tooth",
-        ruta: "/"
+        ruta: "home"
       },
       {
         nombre: "Catalogo de Productos",
@@ -75,6 +76,13 @@ export default {
         ruta: "citas"
       }
     ]
-  })
+  }),
+  computed: {
+    isAuthenticated() {
+      console.log(this.$route.path);
+
+      return this.$route.path != "/"; // sacar datos de la sesion en la proxima
+    }
+  }
 };
 </script>

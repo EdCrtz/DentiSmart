@@ -1,251 +1,257 @@
 <template>
-  <v-row>
-    <v-col sm="12" lg="3" class="mb-4 controls">
-      <v-btn
-        fab
-        small
-        absolute
-        left
-        color="primary"
-        @click="$refs.calendar.prev()"
-      >
-        <v-icon dark>mdi-chevron-left</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        small
-        absolute
-        right
-        color="primary"
-        @click="$refs.calendar.next()"
-      >
-        <v-icon dark>mdi-chevron-right</v-icon>
-      </v-btn>
-      <br /><br /><br />
-      <v-select
-        v-model="type"
-        :items="typeOptions"
-        label="Tipo"
-        hide-details
-        outlined
-        dense
-      ></v-select>
-      <v-checkbox v-model="dark" label="Modo oscuro" hide-details></v-checkbox>
-      <v-checkbox
-        v-model="shortIntervals"
-        label="Nombres cortos"
-        hide-details
-      ></v-checkbox>
-      <v-checkbox
-        v-model="shortMonths"
-        label="Nombres de mes cortos"
-        hide-details
-      ></v-checkbox>
-      <v-checkbox
-        v-model="shortWeekdays"
-        label="Nombres de semana cortos"
-        hide-details
-      ></v-checkbox>
-      <v-select
-        v-model="color"
-        :items="colorOptions"
-        class="mt-3"
-        label="Color"
-        hide-details
-        outlined
-        dense
-      ></v-select>
-      <v-menu
-        ref="startMenu"
-        v-model="startMenu"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        :return-value.sync="start"
-        transition="scale-transition"
-        min-width="290px"
-        offset-y
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-text-field
+  <v-container>
+    <v-row>
+      <v-col sm="12" lg="3" class="mb-4 controls">
+        <v-btn
+          fab
+          small
+          absolute
+          left
+          color="primary"
+          @click="$refs.calendar.prev()"
+        >
+          <v-icon dark>mdi-chevron-left</v-icon>
+        </v-btn>
+        <v-btn
+          fab
+          small
+          absolute
+          right
+          color="primary"
+          @click="$refs.calendar.next()"
+        >
+          <v-icon dark>mdi-chevron-right</v-icon>
+        </v-btn>
+        <br /><br /><br />
+        <v-select
+          v-model="type"
+          :items="typeOptions"
+          label="Tipo"
+          hide-details
+          outlined
+          dense
+        ></v-select>
+        <v-checkbox
+          v-model="dark"
+          label="Modo oscuro"
+          hide-details
+        ></v-checkbox>
+        <v-checkbox
+          v-model="shortIntervals"
+          label="Nombres cortos"
+          hide-details
+        ></v-checkbox>
+        <v-checkbox
+          v-model="shortMonths"
+          label="Nombres de mes cortos"
+          hide-details
+        ></v-checkbox>
+        <v-checkbox
+          v-model="shortWeekdays"
+          label="Nombres de semana cortos"
+          hide-details
+        ></v-checkbox>
+        <v-select
+          v-model="color"
+          :items="colorOptions"
+          class="mt-3"
+          label="Color"
+          hide-details
+          outlined
+          dense
+        ></v-select>
+        <v-menu
+          ref="startMenu"
+          v-model="startMenu"
+          :close-on-content-click="false"
+          :nudge-right="40"
+          :return-value.sync="start"
+          transition="scale-transition"
+          min-width="290px"
+          offset-y
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
+              v-model="start"
+              class="mt-3"
+              label="Fecha inicio"
+              dense
+              readonly
+              outlined
+              hide-details
+              v-bind="attrs"
+              v-on="on"
+            ></v-text-field>
+          </template>
+          <v-date-picker v-model="start" no-title scrollable>
+            <v-spacer></v-spacer>
+            <v-btn text color="primary" @click="startMenu = false">
+              Cancelar
+            </v-btn>
+            <v-btn text color="primary" @click="$refs.startMenu.save(start)">
+              OK
+            </v-btn>
+          </v-date-picker>
+        </v-menu>
+        <v-menu
+          v-if="hasEnd"
+          ref="endMenu"
+          v-model="endMenu"
+          :close-on-content-click="false"
+          :nudge-right="40"
+          :return-value.sync="end"
+          transition="scale-transition"
+          min-width="290px"
+          offset-y
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
+              v-model="end"
+              class="mt-3"
+              label="Fecha fin"
+              dense
+              readonly
+              outlined
+              hide-details
+              v-bind="attrs"
+              v-on="on"
+            ></v-text-field>
+          </template>
+          <v-date-picker v-model="end" no-title scrollable>
+            <v-spacer></v-spacer>
+            <v-btn text color="primary" @click="endMenu = false">
+              Cancelar
+            </v-btn>
+            <v-btn text color="primary" @click="$refs.endMenu.save(end)">
+              OK
+            </v-btn>
+          </v-date-picker>
+        </v-menu>
+        <v-menu
+          ref="nowMenu"
+          v-model="nowMenu"
+          :close-on-content-click="false"
+          :nudge-right="40"
+          :return-value.sync="now"
+          transition="scale-transition"
+          min-width="290px"
+          offset-y
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
+              v-model="now"
+              class="mt-3"
+              label="Hoy"
+              dense
+              readonly
+              outlined
+              hide-details
+              v-bind="attrs"
+              v-on="on"
+            ></v-text-field>
+          </template>
+          <v-date-picker v-model="now" no-title scrollable>
+            <v-spacer></v-spacer>
+            <v-btn text color="primary" @click="nowMenu = false">
+              Cancelar
+            </v-btn>
+            <v-btn text color="primary" @click="$refs.nowMenu.save(now)">
+              OK
+            </v-btn>
+          </v-date-picker>
+        </v-menu>
+        <v-select
+          v-model="mode"
+          :items="modeOptions"
+          dense
+          outlined
+          hide-details
+          class="mt-3"
+          label="Modo Superpocision de citas"
+        ></v-select>
+        <v-select
+          v-model="weekdays"
+          :items="weekdaysOptions"
+          dense
+          outlined
+          hide-details
+          class="mt-3"
+          label="Dias de la semana"
+        ></v-select>
+        <v-text-field
+          v-if="type === 'custom-weekly'"
+          v-model="minWeeks"
+          dense
+          outlined
+          hide-details
+          class="mt-3"
+          label="Minimo de semana"
+          type="number"
+        ></v-text-field>
+        <v-select
+          v-if="hasIntervals"
+          v-model="intervals"
+          :items="intervalsOptions"
+          dense
+          outlined
+          hide-details
+          class="mt-3"
+          label="Intervals"
+        ></v-select>
+        <v-select
+          v-if="type === 'custom-daily'"
+          v-model="maxDays"
+          :items="maxDaysOptions"
+          dense
+          outlined
+          hide-details
+          class="mt-3"
+          label="# de dias"
+        ></v-select>
+        <v-select
+          v-if="hasIntervals"
+          v-model="styleInterval"
+          :items="styleIntervalOptions"
+          dense
+          outlined
+          hide-details
+          class="mt-3"
+          label="Estlismo"
+        ></v-select>
+      </v-col>
+      <v-col sm="12" lg="9" class="pl-4">
+        <v-sheet height="600">
+          <v-calendar
+            ref="calendar"
             v-model="start"
-            class="mt-3"
-            label="Fecha inicio"
-            dense
-            readonly
-            outlined
-            hide-details
-            v-bind="attrs"
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker v-model="start" no-title scrollable>
-          <v-spacer></v-spacer>
-          <v-btn text color="primary" @click="startMenu = false">
-            Cancelar
-          </v-btn>
-          <v-btn text color="primary" @click="$refs.startMenu.save(start)">
-            OK
-          </v-btn>
-        </v-date-picker>
-      </v-menu>
-      <v-menu
-        v-if="hasEnd"
-        ref="endMenu"
-        v-model="endMenu"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        :return-value.sync="end"
-        transition="scale-transition"
-        min-width="290px"
-        offset-y
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-text-field
-            v-model="end"
-            class="mt-3"
-            label="Fecha fin"
-            dense
-            readonly
-            outlined
-            hide-details
-            v-bind="attrs"
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker v-model="end" no-title scrollable>
-          <v-spacer></v-spacer>
-          <v-btn text color="primary" @click="endMenu = false">
-            Cancelar
-          </v-btn>
-          <v-btn text color="primary" @click="$refs.endMenu.save(end)">
-            OK
-          </v-btn>
-        </v-date-picker>
-      </v-menu>
-      <v-menu
-        ref="nowMenu"
-        v-model="nowMenu"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        :return-value.sync="now"
-        transition="scale-transition"
-        min-width="290px"
-        offset-y
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-text-field
-            v-model="now"
-            class="mt-3"
-            label="Hoy"
-            dense
-            readonly
-            outlined
-            hide-details
-            v-bind="attrs"
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker v-model="now" no-title scrollable>
-          <v-spacer></v-spacer>
-          <v-btn text color="primary" @click="nowMenu = false">
-            Cancelar
-          </v-btn>
-          <v-btn text color="primary" @click="$refs.nowMenu.save(now)">
-            OK
-          </v-btn>
-        </v-date-picker>
-      </v-menu>
-      <v-select
-        v-model="mode"
-        :items="modeOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Modo Superpocision de citas"
-      ></v-select>
-      <v-select
-        v-model="weekdays"
-        :items="weekdaysOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Dias de la semana"
-      ></v-select>
-      <v-text-field
-        v-if="type === 'custom-weekly'"
-        v-model="minWeeks"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Minimo de semana"
-        type="number"
-      ></v-text-field>
-      <v-select
-        v-if="hasIntervals"
-        v-model="intervals"
-        :items="intervalsOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Intervals"
-      ></v-select>
-      <v-select
-        v-if="type === 'custom-daily'"
-        v-model="maxDays"
-        :items="maxDaysOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="# de dias"
-      ></v-select>
-      <v-select
-        v-if="hasIntervals"
-        v-model="styleInterval"
-        :items="styleIntervalOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Estlismo"
-      ></v-select>
-    </v-col>
-    <v-col sm="12" lg="9" class="pl-4">
-      <v-sheet height="600">
-        <v-calendar
-          ref="calendar"
-          v-model="start"
-          :type="type"
-          :start="start"
-          :end="end"
-          :min-weeks="minWeeks"
-          :max-days="maxDays"
-          :now="now"
-          :dark="dark"
-          :weekdays="weekdays"
-          :first-interval="intervals.first"
-          :interval-minutes="intervals.minutes"
-          :interval-count="intervals.count"
-          :interval-height="intervals.height"
-          :interval-style="intervalStyle"
-          :show-interval-label="showIntervalLabel"
-          :short-intervals="shortIntervals"
-          :short-months="shortMonths"
-          :short-weekdays="shortWeekdays"
-          :color="color"
-          :events="events"
-          :event-overlap-mode="mode"
-          :event-overlap-threshold="45"
-          :event-color="getEventColor"
-          @change="getEvents"
-        ></v-calendar>
-      </v-sheet>
-    </v-col>
-  </v-row>
+            :type="type"
+            :start="start"
+            :end="end"
+            :min-weeks="minWeeks"
+            :max-days="maxDays"
+            :now="now"
+            :dark="dark"
+            :weekdays="weekdays"
+            :first-interval="intervals.first"
+            :interval-minutes="intervals.minutes"
+            :interval-count="intervals.count"
+            :interval-height="intervals.height"
+            :interval-style="intervalStyle"
+            :show-interval-label="showIntervalLabel"
+            :short-intervals="shortIntervals"
+            :short-months="shortMonths"
+            :short-weekdays="shortWeekdays"
+            :color="color"
+            :events="events"
+            :event-overlap-mode="mode"
+            :event-overlap-threshold="45"
+            :event-color="getEventColor"
+            @change="getEvents"
+          ></v-calendar>
+        </v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
 const weekdaysDefault = [0, 1, 2, 3, 4, 5, 6];

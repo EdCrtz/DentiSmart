@@ -51,7 +51,7 @@ namespace DentiSmart.API.Controllers
             }, consultorio);
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut]
         public async Task<IActionResult> Update(Consultorio consultorio)
         {
             var consultorio1 = await _consultorioRepository.GetById(consultorio.Id);

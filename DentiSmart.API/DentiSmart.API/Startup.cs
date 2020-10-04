@@ -36,6 +36,7 @@ namespace DentiSmart.API
             services.AddSingleton<IDentiSmartDatabaseSettings>(sp =>
                             sp.GetRequiredService<IOptions<DentiSmartDatabaseSettings>>().Value);
             services.AddSingleton<ConsultorioRepository>();
+            services.AddSingleton<UsuarioRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

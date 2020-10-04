@@ -30,14 +30,14 @@ namespace DentiSmart.API.Controllers
         [HttpGet("{id:length(24)}", Name = "GetConsultorio")]
         public async Task<IActionResult> GetById(string id)
         {
-            var tienda = await _consultorioRepository.GetById(id);
+            var consultorio = await _consultorioRepository.GetById(id);
 
-            if (tienda == null)
+            if (consultorio == null)
             {
                 return NotFound();
             }
 
-            return Ok(tienda);
+            return Ok(consultorio);
         }
 
         [HttpPost]
@@ -45,7 +45,7 @@ namespace DentiSmart.API.Controllers
         {
             await _consultorioRepository.Create(consultorio);
 
-            return CreatedAtRoute("GetTienda", new
+            return CreatedAtRoute("GetConsultorio", new
             {
                 id = consultorio.Id.ToString()
             }, consultorio);
@@ -54,9 +54,9 @@ namespace DentiSmart.API.Controllers
         [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> Update(Consultorio consultorio)
         {
-            var tienda1 = await _consultorioRepository.GetById(consultorio.Id);
+            var consultorio1 = await _consultorioRepository.GetById(consultorio.Id);
 
-            if (tienda1 == null)
+            if (consultorio1 == null)
             {
                 return NotFound();
             }
@@ -69,14 +69,14 @@ namespace DentiSmart.API.Controllers
         [HttpDelete("{id:length(24)}")]
         public async Task<IActionResult> DeleteById(string id)
         {
-            var tienda = await _consultorioRepository.GetById(id);
+            var consultorio = await _consultorioRepository.GetById(id);
 
-            if (tienda == null)
+            if (consultorio == null)
             {
                 return NotFound();
             }
 
-            await _consultorioRepository.DeleteById(tienda.Id);
+            await _consultorioRepository.DeleteById(consultorio.Id);
 
             return NoContent();
         }

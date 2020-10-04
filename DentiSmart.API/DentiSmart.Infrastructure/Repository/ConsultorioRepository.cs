@@ -21,7 +21,7 @@ namespace DentiSmart.Infrastructure.Repository
 
         public async Task<List<Consultorio>> Get()
         {
-            return await _consultorioCollection.Find(tienda => true).ToListAsync();
+            return await _consultorioCollection.Find(cosnsultorio => true).ToListAsync();
         }
 
         public async Task<Consultorio> GetById(string id)
@@ -35,10 +35,10 @@ namespace DentiSmart.Infrastructure.Repository
             return consultorio;
         }
 
-        public async Task Update(Consultorio nueveConsultorio)
+        public async Task Update(Consultorio nuevoConsultorio)
         {
 
-            await _consultorioCollection.ReplaceOneAsync(consultorio => consultorio.Id == nueveConsultorio.Id, nueveConsultorio);
+            await _consultorioCollection.ReplaceOneAsync(consultorio => consultorio.Id == nuevoConsultorio.Id, nuevoConsultorio);
         }
 
         public async Task Delete(Consultorio consultorioborrar)

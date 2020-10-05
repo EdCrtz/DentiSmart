@@ -3,6 +3,8 @@ using DentiSmart.Infrastructure.DataBase;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,13 +33,14 @@ namespace DentiSmart.Infrastructure.Repository
 
         public async Task<Usuario> Create(Usuario usuario)
         {
+            usuario.Contrasenia = CryptographyService.HashPasswordUsingPBKDF2(usuario.Contrasenia);
             await _usuarioCollection.InsertOneAsync(usuario);
             return usuario;
         }
 
         public async Task Update(Usuario nuevoUsuario)
         {
-
+            nuevoUsuario.Contrasenia = CryptographyService.HashPasswordUsingPBKDF2(nuevoUsuario.Contrasenia);
             await _usuarioCollection.ReplaceOneAsync(usuario => usuario.Id == nuevoUsuario.Id, nuevoUsuario);
         }
 

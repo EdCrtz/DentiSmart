@@ -3,17 +3,15 @@ DentiSmart v1.0
   <h4 align="center">DentiSmart un sistema para la gestión de consultorios dentales.</h4>
 </h1>
 <div align="center" style="text-align:center">
-<img src="https://universidadesdemexico.mx/logos/original/logo-instituto-tecnologico-de-culiacan.png " width="100"/>
+<img src="https://universidadesdemexico.mx/logos/original/logo-instituto-tecnologico-de-culiacan.png" width="100"/>
 </div>
-<div align="center">
-[🙏 Probar ahora](#-Probar-ahora) |
-[⚡  Características](#-Características) |
-[📝  Diagrama de despligue](#-Diagrama-de-despligue) |
-[💾 Instalación](#-Instalación) |
-[👨‍🏫 Profesor](#-Profesor) |
-[👨‍💻👩‍💻 Equipo](#-Equipo) |
-[🥉 Carrera](#-Carrera)
-</div>
+[🙏 Probar ahora](#-probar-ahora) |
+[⚡  Características](#-características) |
+[📝  Diagrama de despligue](#-diagrama-de-despligue) |
+[💾 Instalación](#-instalación) |
+[👨‍🏫 Profesor](#-profesor) |
+[👨‍💻👩‍💻 Equipo](#-equipo) |
+[🥉 Carrera](#-carrera)
 
 ## 🙏 Probar ahora
 - 💻 Video Demo [AQUI](https://www.youtube.com/watch?v=HxdXGHmA2RA)

@@ -1,0 +1,24 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+WORKDIR /app 
+#
+# copy csproj and restore as distinct layers
+COPY *.sln .
+COPY DentiSmart.API/*.csproj ./DentiSmart.API/
+COPY DentiSmart.Domain/*.csproj ./DentiSmart.Domain/
+COPY DentiSmart.Infrastructure/*.csproj ./DentiSmart.Infrastructure/
+#
+RUN dotnet restore 
+#
+# copy everything else and build app
+COPY DentiSmart.API/. ./DentiSmart.API/
+COPY DentiSmart.Domain/. ./DentiSmart.Domain/
+COPY DentiSmart.Infrastructure/. ./DentiSmart.Infrastructure/ 
+#
+WORKDIR /app/DentiSmart.API
+RUN dotnet publish -c Release -o out 
+#
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS runtime
+WORKDIR /app 
+#
+COPY --from=build /app/DentiSmart.API/out ./
+ENTRYPOINT ["dotnet", "DentiSmart.API.dll"]

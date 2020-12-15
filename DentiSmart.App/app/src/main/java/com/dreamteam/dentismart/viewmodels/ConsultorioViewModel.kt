@@ -6,8 +6,11 @@ import com.dreamteam.dentismart.models.Consultorio
 import com.dreamteam.dentismart.repositories.ConsultorioRepository
 
 
-class ConsultorioViewModel:ViewModel()
-{
+class ConsultorioViewModel : ViewModel() {
     private val repository: ConsultorioRepository = ConsultorioRepository()
-    private var consultorios: MutableLiveData<List<Consultorio>> = repository.consultorioResponse;
+    private var consultorios: MutableLiveData<List<Consultorio>> = repository.consultorioResponse
+    fun getConsultorios(): MutableLiveData<List<Consultorio>> {
+        repository.getConsultorios()
+        return consultorios
+    }
 }

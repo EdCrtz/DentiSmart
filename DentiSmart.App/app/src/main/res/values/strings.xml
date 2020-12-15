@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">DentiSmart</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_citas">CitasActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_citas">Citas</string>
+    <string name="menu_tratamientos">Tratamientos</string>
+    <string name="menu_pagos">Pagos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="agregar_cita">NUEVA CITA</string>
+    <string name="Consultorio_Spinner">Consultorio</string>
+    <string name="Paciente_Spinner">Paciente</string>
+    <string name="Servicios_Spinner">Servicio</string>
 </resources>

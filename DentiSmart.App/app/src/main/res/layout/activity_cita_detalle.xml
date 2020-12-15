@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ui.citas.AgregarCitaFragment">
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="Detalle de cita"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.137" />
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:id="@+id/textView6"
+                android:layout_width="106dp"
+                android:layout_height="24dp"
+                android:text="Consultorio:" />
+
+            <Spinner
+                android:id="@+id/spinConsultorio_detalle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/Consultorio_Spinner"
+                android:layout_marginStart="10dp"
+                android:prompt="@string/Consultorio_Spinner" />
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="90dp"
+                android:layout_height="27dp"
+                android:text="Dentistas:"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.149"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.656" />
+
+            <Spinner
+                android:id="@+id/spinDentista_detalle"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:hint="@string/Servicios_Spinner"
+                android:layout_marginStart="10dp"
+                android:prompt="@string/Servicios_Spinner" />
+
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:id="@+id/textView5"
+                android:layout_width="85dp"
+                android:layout_height="29dp"
+                android:text="Servicios:" />
+
+
+
+            <Spinner
+                android:id="@+id/spinServicio_detalle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="10dp"
+                android:hint="@string/Servicios_Spinner" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/fechaButton_detalle"
+                    android:layout_width="69dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_baseline_calendar_today_24" />
+                <ImageButton
+                    android:id="@+id/horaButton_detalle"
+                    android:layout_width="67dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_baseline_access_time_24" />
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textViewhora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnGuardar_detalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Actualizar"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <Button
+                android:id="@+id/btnCancelar_detalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F11919"
+                android:gravity="center"
+                android:text="Cancelar"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

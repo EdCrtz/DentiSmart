@@ -1,0 +1,23 @@
+[11:43 a. m., 30/11/2020] +52 1 667 250 5829: Presentación en Video de Proyecto final:
+1. El quipo deberá grabar y editar una presentación en video sobre su proyecto.
+2. El tema central es presentar su proyecto como si se estuviera entregando hacia un cliente.
+3. Su video-presentación cotendrá dos secciones de +-20min cada una
+3.1 La primera sección deberá incluir:
+
+    a) Portada
+    b) Suma de talentos (equipo)
+    c) Planteamiento del problema (del cliente, basarse en sentencias de visión)
+    d) Objetivo General y Objetivos Especificos
+    e) Beneficios del Producto
+    f) Ventajas competitivas
+    g) Justificación Técnica
+    h) Planeación/Justificación de Costos
+    i) Plan de Despliegue
+    j) Propuesta económica y condiciones de pago
+3.2 Hacer una demostración de la funcionalidad del proyecto, incluyendo portal web, aplicación móvil o dispositivos IoT en los casos que fuere necesario. 
+4. Incluir varias perspectivas de los diferentes usuarios, en favor de mostrar la funcionalidad de su proyecto. 
+5. Todos los miembros del equipo deben de participar, no deben juntarse, cada quien grabará su sección, presentación y editarlas en conjunto. Si deben de aparecer físicamente presentando, por ejemplo Powerpoint tiene esta funcionalidad por default. Cada miembro debe de participar como mínimo 5 minutos, el video final no debe de durar mas de 40 minutos. 
+6. El video final se debe subir a alguna plataforma común como OneDrive (el cual tenemos a través de office 360 o bien alguna otra plataforma gratuita que ambos maestros podamos acceder gratuitamente. Consideren pasar el video por un tras codificador para ajustar la calidad, en mi experiencia dando clases el minimo para poder ver texto adecuadamente es 720, pueden bajar el FR a 12 fps para reducir el tamaño del archivo. Yo utilizo OBS, No realizo edición comúnmente, y Handbrake.
+7. Existirá una revisión técnica aparte de esta presentación, por lo cual su portal web debe de estar en algún sitio accesible en internet. El código de todos los componentes debe de estar disponible en los repositorios de los grupos y debe de ser ejecutable (que se pueda compilar).
+[11:43 a. m., 30/11/2020] +52 1 667 250 5829: este es el comunicado que tengo del maestro moya, con quién hable esta mañana
+[11:44 a. m., 30/11/2020] +52 1 667 250 5829: los puntos del 2 al 4 son los que tienen que ver conmigo, cualquier indicación que les haga el maestro Moya, por favor síganla al pie de la letra ...

@@ -1,0 +1,22 @@
+
+docker-build-master:
+  # Official docker image.
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - cd DentiSmart.API/
+    - docker build --pull -f DentiSmart.API/dockerfile -t "$CI_REGISTRY_IMAGE_BACKEND" .
+    - docker push  "$CI_REGISTRY_IMAGE_BACKEND"
+    - cd ..
+    - cd DentiSmart.FrontEnd/
+    - docker build --pull -t  "$CI_REGISTRY_IMAGE_FRONTEND" .
+    - docker push  "$CI_REGISTRY_IMAGE_FRONTEND"
+    - cd /home/lalo
+    - docker-compose -f docker-compose.yml down
+    - docker-compose -f docker-compose.yml up -d
+  only:
+    - master

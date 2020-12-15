@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title="main menu"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/darkmode"
+                android:icon="@drawable/ic_baseline_emoji_objects_24"
+                android:orderInCategory="100"
+                android:title="Modo oscuro"
+                app:iconTint="?android:attr/colorPrimary"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/buttonLogout"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
+                android:orderInCategory="100"
+                android:title="Cerrar sesion"
+                app:iconTint="?android:attr/colorPrimary"
+                app:showAsAction="never" />
+
+        </menu>
+    </item>
+</menu>

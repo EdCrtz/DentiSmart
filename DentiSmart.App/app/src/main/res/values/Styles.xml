@@ -1,0 +1,30 @@
+<resources>
+
+    <style name="toastGood">
+        <item name="stTextColor">#ffffff</item>
+        <item name="stColorBackground">#28a745</item>
+        <item name="stIconStart">@drawable/ic_baseline_done_24</item>
+        <item name="stLength">SHORT</item>
+    </style>
+
+    <style name="toastBad">
+        <item name="stTextColor">#ffffff</item>
+        <item name="stColorBackground">#dc3545</item>
+        <item name="stIconStart">@drawable/ic_baseline_error_24</item>
+        <item name="stLength">SHORT</item>
+    </style>
+    <style name="toastWarning">
+        <item name="stTextColor">#ffffff</item>
+        <item name="stColorBackground">#FFC205</item>
+        <item name="stIconStart">@drawable/ic_baseline_warning_24</item>
+        <item name="stLength">SHORT</item>
+    </style>
+    <style name="Theme.DentiSmart.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DentiSmart.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DentiSmart.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

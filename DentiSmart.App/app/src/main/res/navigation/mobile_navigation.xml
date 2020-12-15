@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.dreamteam.dentismart.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_citas"
+        android:name="com.dreamteam.dentismart.ui.citas.CitasFragment"
+        android:label="@string/menu_citas"
+        tools:layout="@layout/fragment_citas" />
+
+    <fragment
+        android:id="@+id/nav_tratamientos"
+        android:name="com.dreamteam.dentismart.ui.tratamientos.TratamientosFragment"
+        android:label="@string/menu_tratamientos"
+        tools:layout="@layout/fragment_tratamientos" />
+    <fragment
+        android:id="@+id/nav_pagos"
+        android:name="com.dreamteam.dentismart.ui.pagos.PagoFragment"
+        android:label="@string/menu_pagos"
+        tools:layout="@layout/fragment_pagos" />
+
+</navigation>

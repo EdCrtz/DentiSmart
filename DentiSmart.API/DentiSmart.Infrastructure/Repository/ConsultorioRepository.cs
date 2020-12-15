@@ -1,4 +1,5 @@
-﻿using DentiSmart.Domain.Models;
+﻿using DentiSmart.Domain.Contracts;
+using DentiSmart.Domain.Models;
 using DentiSmart.Infrastructure.DataBase;
 using MongoDB.Driver;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DentiSmart.Infrastructure.Repository
 {
-    public class ConsultorioRepository
+    public class ConsultorioRepository: IConsultorioRepository
     {
         private readonly IMongoCollection<Consultorio> _consultorioCollection;
 
@@ -21,7 +22,7 @@ namespace DentiSmart.Infrastructure.Repository
 
         public async Task<List<Consultorio>> Get()
         {
-            return await _consultorioCollection.Find(cosnsultorio => true).ToListAsync();
+            return await _consultorioCollection.Find(consultorio => true).ToListAsync();
         }
 
         public async Task<Consultorio> GetById(string id)

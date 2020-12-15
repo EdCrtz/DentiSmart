@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/frag_tratamientos_layout"
+    tools:context=".ui.tratamientos.TratamientosFragment">
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/tratamientoSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        app:queryHint="Buscar tratamiento"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTratamiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!-- TODO: Update blank fragment layout -->
+
+</LinearLayout>

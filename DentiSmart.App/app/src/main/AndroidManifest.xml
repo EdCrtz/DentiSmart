@@ -2,14 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dreamteam.dentismart">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DentiSmart">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.DentiSmart"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.citas.CitaDetalleActivity"></activity>
+        <activity android:name=".ui.tratamientos.TratamientoDetalleActivity" />
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.DentiSmart.NoActionBar" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

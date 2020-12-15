@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  dentismart-front:
+    image: registry.itculiacan.edu.mx/dentismart/dentismart/frontend
+    restart: always
+    ports:
+      - '80:80'
+
+  
+  dentsimart-backend:
+    image: registry.itculiacan.edu.mx/dentismart/dentismart/backend
+    restart: always
+    ports:
+      - '5000:80'
+

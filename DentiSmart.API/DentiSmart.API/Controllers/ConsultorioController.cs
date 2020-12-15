@@ -2,31 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DentiSmart.Domain.Contracts;
 using DentiSmart.Domain.Models;
 using DentiSmart.Infrastructure.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace DentiSmart.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
+
     public class ConsultorioController : ControllerBase
     {
-        private readonly ConsultorioRepository _consultorioRepository;
+        private readonly IConsultorioRepository _consultorioRepository;
 
-        public ConsultorioController(ConsultorioRepository consultorioRepository)
+        public ConsultorioController(IConsultorioRepository consultorioRepository)
         {
             _consultorioRepository = consultorioRepository;
         }
-
+        /// <summary>
+        /// Obtener todos los consultorios existentes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             return Ok(await _consultorioRepository.Get());
         }
 
+        /// <summary>
+        /// Obtener un consultorio existente por id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:length(24)}", Name = "GetConsultorio")]
         public async Task<IActionResult> GetById(string id)
         {
@@ -39,7 +50,11 @@ namespace DentiSmart.API.Controllers
 
             return Ok(consultorio);
         }
-
+        /// <summary>
+        /// Registrar un nuevo consultorio en el sistema
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
         public async Task<IActionResult> Create(Consultorio consultorio)
         {
@@ -50,7 +65,11 @@ namespace DentiSmart.API.Controllers
                 id = consultorio.Id.ToString()
             }, consultorio);
         }
-
+        /// <summary>
+        /// Actualizar un consultorio existente
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = "ADMIN")]
         [HttpPut]
         public async Task<IActionResult> Update(Consultorio consultorio)
         {
@@ -65,7 +84,11 @@ namespace DentiSmart.API.Controllers
 
             return NoContent();
         }
-
+        /// <summary>
+        /// Eliminar un consultorio existente por id
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = "ADMIN")]
         [HttpDelete("{id:length(24)}")]
         public async Task<IActionResult> DeleteById(string id)
         {
@@ -80,5 +103,6 @@ namespace DentiSmart.API.Controllers
 
             return NoContent();
         }
+
     }
 }

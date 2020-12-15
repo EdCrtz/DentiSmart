@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.pagos.PagoFragment"
+    android:id="@+id/frag_pagos_layout"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/pagoSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        app:queryHint="Buscar pago"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPagos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

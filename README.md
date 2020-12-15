@@ -5,16 +5,6 @@ DentiSmart v1.0
 <div align="center" style="text-align:center">
 <img src="https://universidadesdemexico.mx/logos/original/logo-instituto-tecnologico-de-culiacan.png" width="100"/>
 </div>
-<div align="center">
-[🙏 Probar ahora](#-probar-ahora) |
-[⚡  Características](#-características) |
-[📝  Diagrama de despligue](#-diagrama-de-despligue) |
-[💾 Instalación](#-instalación) |
-[👨‍🏫 Profesor](#-profesor) |
-[👨‍💻👩‍💻 Equipo](#-equipo) |
-[🥉 Carrera](#-carrera)
-</div>
-
 
 ## 🙏 Probar ahora
 - 💻 Prueba nuestra [SPA](https://dentismart.ga)

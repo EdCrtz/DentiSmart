@@ -6,13 +6,13 @@ DentiSmart v1.0
 <img src="https://universidadesdemexico.mx/logos/original/logo-instituto-tecnologico-de-culiacan.png " width="100"/>
 </div>
 <div align="center">
-[🙏 Probar ahora](#-probar-ahora) |
-[⚡  Características](#-características) |
-[📝  Diagrama de despligue](#-diagrama-de-despligue) |
-[💾 Instalación](#-instalación) |
-[👨‍🏫 Profesor](#-profesor) |
-[👨‍💻👩‍💻 Equipo](#-equipo) |
-[🥉 Carrera](#-carrera)
+[🙏 Probar ahora](#-Probar-ahora) |
+[⚡  Características](#-Características) |
+[📝  Diagrama de despligue](#-Diagrama-de-despligue) |
+[💾 Instalación](#-Instalación) |
+[👨‍🏫 Profesor](#-Profesor) |
+[👨‍💻👩‍💻 Equipo](#-Equipo) |
+[🥉 Carrera](#-Carrera)
 </div>
 
 ## 🙏 Probar ahora
